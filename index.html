@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <!-- Rend le site lisible sur mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOM — Mixage & Mastering</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== BARRE DE NAVIGATION ===== -->
+  <header>
+    <nav>
+      <span class="logo">NOM</span>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#travaux">Travaux</a></li>
+        <li><a href="#video">Vidéo</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== SECTION D'ACCUEIL (HERO) ===== -->
+  <section id="accueil" class="hero">
+    <h1>Ton nom / ton alias</h1>
+    <p class="sous-titre">Mixage &amp; mastering — [ta phrase d'accroche ici]</p>
+    <a href="#travaux" class="bouton">Écouter mes travaux</a>
+  </section>
+
+  <!-- ===== SECTION TRAVAUX (avant/après) ===== -->
+  <section id="travaux">
+    <h2>Avant / Après</h2>
+    <p class="intro">Quelques exemples de ce que mon traitement apporte.</p>
+
+    <!-- Un bloc = un exemple. Duplique-le pour en ajouter. -->
+    <div class="carte">
+      <h3>Titre du morceau — Genre</h3>
+      <p class="note">Problème résolu : [ex. voix noyée → clarté et présence]</p>
+      <div class="lecteurs">
+        <div class="lecteur">
+          <span class="etiquette">Avant</span>
+          <button class="play" data-cible="wave1a">▶</button>
+          <div id="wave1a" class="wave" data-audio="audio/exemple1-avant.mp3"></div>
+        </div>
+        <div class="lecteur">
+          <span class="etiquette">Après</span>
+          <button class="play" data-cible="wave1b">▶</button>
+          <div id="wave1b" class="wave" data-audio="audio/exemple1-apres.mp3"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carte">
+      <h3>Titre du morceau — Genre</h3>
+      <p class="note">Problème résolu : [décris en une phrase]</p>
+      <div class="lecteurs">
+        <div class="lecteur">
+          <span class="etiquette">Avant</span>
+          <button class="play" data-cible="wave2a">▶</button>
+          <div id="wave2a" class="wave" data-audio="audio/exemple2-avant.mp3"></div>
+        </div>
+        <div class="lecteur">
+          <span class="etiquette">Après</span>
+          <button class="play" data-cible="wave2b">▶</button>
+          <div id="wave2b" class="wave" data-audio="audio/exemple2-apres.mp3"></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== SECTION VIDÉO ===== -->
+  <section id="video">
+    <h2>En vidéo</h2>
+    <p class="intro">[Remplace le lien ci-dessous par ta vidéo YouTube.]</p>
+    <div class="cadre-video">
+      <!-- Remplace VIDEO_ID par l'identifiant de ta vidéo YouTube -->
+      <iframe
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        title="Démonstration"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- ===== SECTION CONTACT ===== -->
+  <section id="contact">
+    <h2>Me contacter</h2>
+    <p>Un projet à mixer ? Écris-moi.</p>
+    <a href="mailto:ton@email.com" class="bouton">ton@email.com</a>
+  </section>
+
+  <!-- ===== PIED DE PAGE ===== -->
+  <footer>
+    <p>© <span id="annee"></span> NOM. Tous droits réservés.</p>
+  </footer>
+
+  <!-- Librairie WaveSurfer chargée depuis internet, pas d'installation -->
+  <script src="https://unpkg.com/wavesurfer.js@7"></script>
+  <script src="script.js"></script>
+</body>
+</html>
