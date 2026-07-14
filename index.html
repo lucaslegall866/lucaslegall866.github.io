@@ -2,103 +2,102 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <!-- Rend le site lisible sur mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NOM — Mixage & Mastering</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Lucas Le Gall</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --fond: #0f1115;
+      --fond-clair: #1a1d24;
+      --texte: #e8e8e8;
+      --accent: #e04040;
+      --gris: #9aa0aa;
+    }
+    body {
+      font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--fond);
+      color: var(--texte);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .hub {
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+    }
+    .intro {
+      color: var(--gris);
+      margin-bottom: 48px;
+      font-size: 1.1rem;
+    }
+    .projets {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .projet {
+      display: block;
+      background: var(--fond-clair);
+      border-radius: 12px;
+      padding: 24px;
+      text-decoration: none;
+      color: var(--texte);
+      transition: transform 0.2s, background 0.2s;
+      text-align: left;
+    }
+    .projet:hover {
+      transform: translateY(-3px);
+      background: #21252e;
+    }
+    .projet h2 {
+      font-size: 1.3rem;
+      margin-bottom: 4px;
+    }
+    .projet p {
+      color: var(--gris);
+      font-size: 0.95rem;
+    }
+    .fleche { color: var(--accent); }
+    footer {
+      margin-top: 48px;
+      color: var(--gris);
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 <body>
+  <div class="hub">
+    <h1>Lucas Le Gall</h1>
+    <p class="intro">[Une phrase sur toi — ce que tu fais, ce que tu explores.]</p>
 
-  <!-- ===== BARRE DE NAVIGATION ===== -->
-  <header>
-    <nav>
-      <span class="logo">NOM</span>
-      <ul>
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#travaux">Travaux</a></li>
-        <li><a href="#video">Vidéo</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="projets">
+      <!-- Un lien = un projet. Duplique ce bloc pour en ajouter. -->
+      <a class="projet" href="/musique/">
+        <h2>Mixage &amp; Mastering <span class="fleche">→</span></h2>
+        <p>Mon portfolio audio : avant/après, travaux, contact.</p>
+      </a>
 
-  <!-- ===== SECTION D'ACCUEIL (HERO) ===== -->
-  <section id="accueil" class="hero">
-    <h1>Ton nom / ton alias</h1>
-    <p class="sous-titre">Mixage &amp; mastering — [ta phrase d'accroche ici]</p>
-    <a href="#travaux" class="bouton">Écouter mes travaux</a>
-  </section>
-
-  <!-- ===== SECTION TRAVAUX (avant/après) ===== -->
-  <section id="travaux">
-    <h2>Avant / Après</h2>
-    <p class="intro">Quelques exemples de ce que mon traitement apporte.</p>
-
-    <!-- Un bloc = un exemple. Duplique-le pour en ajouter. -->
-    <div class="carte">
-      <h3>Titre du morceau — Genre</h3>
-      <p class="note">Problème résolu : [ex. voix noyée → clarté et présence]</p>
-      <div class="lecteurs">
-        <div class="lecteur">
-          <span class="etiquette">Avant</span>
-          <button class="play" data-cible="wave1a">▶</button>
-          <div id="wave1a" class="wave" data-audio="audio/exemple1-avant.mp3"></div>
-        </div>
-        <div class="lecteur">
-          <span class="etiquette">Après</span>
-          <button class="play" data-cible="wave1b">▶</button>
-          <div id="wave1b" class="wave" data-audio="audio/exemple1-apres.mp3"></div>
-        </div>
-      </div>
+      <!-- Exemple de futur projet (décommente et adapte quand tu en auras un) :
+      <a class="projet" href="/autre-projet/">
+        <h2>Autre projet <span class="fleche">→</span></h2>
+        <p>Description courte du projet.</p>
+      </a>
+      -->
     </div>
 
-    <div class="carte">
-      <h3>Titre du morceau — Genre</h3>
-      <p class="note">Problème résolu : [décris en une phrase]</p>
-      <div class="lecteurs">
-        <div class="lecteur">
-          <span class="etiquette">Avant</span>
-          <button class="play" data-cible="wave2a">▶</button>
-          <div id="wave2a" class="wave" data-audio="audio/exemple2-avant.mp3"></div>
-        </div>
-        <div class="lecteur">
-          <span class="etiquette">Après</span>
-          <button class="play" data-cible="wave2b">▶</button>
-          <div id="wave2b" class="wave" data-audio="audio/exemple2-apres.mp3"></div>
-        </div>
-      </div>
-    </div>
+    <footer>© <span id="annee"></span> Lucas Le Gall</footer>
+  </div>
 
-  </section>
-
-  <!-- ===== SECTION VIDÉO ===== -->
-  <section id="video">
-    <h2>En vidéo</h2>
-    <p class="intro">[Remplace le lien ci-dessous par ta vidéo YouTube.]</p>
-    <div class="cadre-video">
-      <!-- Remplace VIDEO_ID par l'identifiant de ta vidéo YouTube -->
-      <iframe
-        src="https://www.youtube.com/embed/VIDEO_ID"
-        title="Démonstration"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </section>
-
-  <!-- ===== SECTION CONTACT ===== -->
-  <section id="contact">
-    <h2>Me contacter</h2>
-    <p>Un projet à mixer ? Écris-moi.</p>
-    <a href="mailto:ton@email.com" class="bouton">ton@email.com</a>
-  </section>
-
-  <!-- ===== PIED DE PAGE ===== -->
-  <footer>
-    <p>© <span id="annee"></span> NOM. Tous droits réservés.</p>
-  </footer>
-
-  <!-- Librairie WaveSurfer chargée depuis internet, pas d'installation -->
-  <script src="https://unpkg.com/wavesurfer.js@7"></script>
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("annee").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
